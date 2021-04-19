@@ -1,0 +1,5 @@
+nucleo152start.h:1:6:SetSysClock	16	static
+main.c:27:5:main	64	static
+main.c:91:6:USART2_Init	4	static
+main.c:106:6:USART2_write	16	static
+main.c:113:6:delay_Ms	24	static

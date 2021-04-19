@@ -1,0 +1,17 @@
+11:25:07 **** Incremental Build of configuration Debug for project Lab3 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\main.o 
+arm-atollic-eabi-gcc -o Lab3.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=Lab3.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list Lab3.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2032	     12	   1052	   3096	    c18	Lab3.elf
+Print size information done
+Generate listing file
+Output sent to: Lab3.list
+Generate listing file done
+Generate build reports done
+
+11:25:08 Build Finished (took 1s.597ms)
+

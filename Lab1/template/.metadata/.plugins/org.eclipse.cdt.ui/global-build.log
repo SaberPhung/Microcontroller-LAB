@@ -1,0 +1,611 @@
+10:59:12 **** Rebuild of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\system_stm32l1xx.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\system_stm32l1xx.o 
+arm-atollic-eabi-gcc -c ..\src\tiny_printf.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\tiny_printf.o 
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m3 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -g -Wa,--warn -x assembler-with-cpp -specs=nano.specs -o src\startup_stm32l152xe.o ..\src\startup_stm32l152xe.s 
+arm-atollic-eabi-gcc -c ..\src\syscalls.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\syscalls.o 
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   1332	     12	   1052	   2396	    95c	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+11:15:44 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2540	     12	   1052	   3604	    e14	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+13:17:15 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'main':
+..\src\main.c:49:6: error: 'RCC_TypeDef {aka struct <anonymous>}' has no member named 'APB2'; did you mean 'APB2ENR'?
+   RCC->APB2  ENR|=0x00000200;  //enable ADC1 clock
+      ^~
+..\src\main.c:49:14: error: expected ';' before 'ENR'
+   RCC->APB2  ENR|=0x00000200;  //enable ADC1 clock
+              ^~~
+13:17:51 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2540	     12	   1052	   3604	    e14	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+13:46:07 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2564	     12	   1052	   3628	    e2c	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+15:29:33 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2564	     12	   1052	   3628	    e2c	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+Info: Nothing to build for lab2
+13:38:58 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:85:14: warning: too many arguments for format [-Wformat-extra-args]
+  sprintf(buf,"A0= %d",temp, " Celsius");
+              ^~~~~~~~
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2608	     12	   1052	   3672	    e58	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+13:40:01 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:86:14: warning: too many arguments for format [-Wformat-extra-args]
+  sprintf(buf,"A0= %d",temp, " Celsius");
+              ^~~~~~~~
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2620	     12	   1052	   3684	    e64	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+13:41:39 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:86:14: warning: too many arguments for format [-Wformat-extra-args]
+  sprintf(buf,"A0= %d",temp, " Celsius");
+              ^~~~~~~~
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2624	     12	   1052	   3688	    e68	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+13:42:37 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:92:20: error: 'i' undeclared (first use in this function)
+   USART2_write(buf[i]);
+                    ^
+..\src\main.c:92:20: note: each undeclared identifier is reported only once for each function it appears in
+..\src\main.c:77:6: warning: variable 'result' set but not used [-Wunused-but-set-variable]
+  int result=0;
+      ^~~~~~
+13:43:19 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:84:28: error: expected identifier before '/' token
+  int temp = 100 * (ADC1 -> / 4095) - 50;
+                            ^
+..\src\main.c:86:14: warning: too many arguments for format [-Wformat-extra-args]
+  sprintf(buf,"A0= %d",temp, " Celsius");
+              ^~~~~~~~
+..\src\main.c:77:6: warning: variable 'result' set but not used [-Wunused-but-set-variable]
+  int result=0;
+      ^~~~~~
+13:44:23 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:77:6: warning: variable 'result' set but not used [-Wunused-but-set-variable]
+  int result=0;
+      ^~~~~~
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2596	     12	   1052	   3660	    e4c	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+13:45:24 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:85:6: error: redefinition of 'temp'
+  int temp = 100 * (ADC1 ->DR / (4095)) - 50;
+      ^~~~
+..\src\main.c:78:6: note: previous definition of 'temp' was here
+  int temp=0;
+      ^~~~
+..\src\main.c:77:6: warning: variable 'result' set but not used [-Wunused-but-set-variable]
+  int result=0;
+      ^~~~~~
+13:47:52 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:85:6: error: redefinition of 'temp'
+  int temp = 100 * (ADC1 ->DR / 4095) - 50;
+      ^~~~
+..\src\main.c:78:6: note: previous definition of 'temp' was here
+  int temp=0;
+      ^~~~
+..\src\main.c:77:6: warning: variable 'result' set but not used [-Wunused-but-set-variable]
+  int result=0;
+      ^~~~~~
+13:52:12 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:84:19: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+  sprintf(buf,"A0=%d",result/4095);
+                   ^
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   4688	     12	   1052	   5752	   1678	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+13:55:39 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   4716	     12	   1052	   5780	   1694	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+14:11:59 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:85:10: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+  temp = (roundf(temp * 100) / 100) * 100;
+          ^~~~~~
+..\src\main.c:85:10: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:85:10: note: include '<math.h>' or provide a declaration of 'roundf'
+..\src\main.c:89:14: warning: too many arguments for format [-Wformat-extra-args]
+  sprintf(buf,"A0=%d.%d",temp_degree, temp_decimal, " Celsius");
+              ^~~~~~~~~~
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   4088	     12	   1052	   5152	   1420	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+14:13:01 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:85:10: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+  temp = (roundf(temp * 100) / 100) * 100;
+          ^~~~~~
+..\src\main.c:85:10: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:85:10: note: include '<math.h>' or provide a declaration of 'roundf'
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   4076	     12	   1052	   5140	   1414	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+14:14:37 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:85:10: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+  temp = (roundf(temp * 100) / 100) * 100;
+          ^~~~~~
+..\src\main.c:85:10: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:85:10: note: include '<math.h>' or provide a declaration of 'roundf'
+..\src\main.c:87:21: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  int temp_decimal = abs((int)temp - (temp_degree * 100));
+                     ^~~
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   4080	     12	   1052	   5144	   1418	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+14:28:51 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:87:10: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+  temp = (roundf(temp * 100) / 100) * 100;
+          ^~~~~~
+..\src\main.c:87:10: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:87:10: note: include '<math.h>' or provide a declaration of 'roundf'
+..\src\main.c:89:21: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  int temp_decimal = abs((int)temp - (temp_degree * 100));
+                     ^~~
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   3924	     12	   1052	   4988	   137c	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+14:35:15 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'main':
+..\src\main.c:59:4: error: too many arguments to function 'read_and_print_A0'
+    read_and_print_A0(count);
+    ^~~~~~~~~~~~~~~~~
+..\src\main.c:21:6: note: declared here
+ void read_and_print_A0(void);
+      ^~~~~~~~~~~~~~~~~
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:75:6: warning: type of 'count' defaults to 'int' [-Wimplicit-int]
+ void read_and_print_A0(count)
+      ^~~~~~~~~~~~~~~~~
+..\src\main.c:76:1: error: number of arguments doesn't match prototype
+ {
+ ^
+..\src\main.c:21:6: error: prototype declaration
+ void read_and_print_A0(void);
+      ^~~~~~~~~~~~~~~~~
+..\src\main.c:87:10: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+  temp = (roundf(temp * 100) / 100) * 100;
+          ^~~~~~
+..\src\main.c:87:10: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:87:10: note: include '<math.h>' or provide a declaration of 'roundf'
+..\src\main.c:89:21: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  int temp_decimal = abs((int)temp - (temp_degree * 100));
+                     ^~~
+14:37:03 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'main':
+..\src\main.c:59:4: error: too many arguments to function 'read_and_print_A0'
+    read_and_print_A0(count);
+    ^~~~~~~~~~~~~~~~~
+..\src\main.c:21:6: note: declared here
+ void read_and_print_A0(void);
+      ^~~~~~~~~~~~~~~~~
+..\src\main.c: At top level:
+..\src\main.c:75:6: error: conflicting types for 'read_and_print_A0'
+ void read_and_print_A0(int count)
+      ^~~~~~~~~~~~~~~~~
+..\src\main.c:21:6: note: previous declaration of 'read_and_print_A0' was here
+ void read_and_print_A0(void);
+      ^~~~~~~~~~~~~~~~~
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:87:10: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+  temp = (roundf(temp * 100) / 100) * 100;
+          ^~~~~~
+..\src\main.c:87:10: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:87:10: note: include '<math.h>' or provide a declaration of 'roundf'
+..\src\main.c:89:21: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  int temp_decimal = abs((int)temp - (temp_degree * 100));
+                     ^~~
+14:37:40 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:87:10: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+  temp = (roundf(temp * 100) / 100) * 100;
+          ^~~~~~
+..\src\main.c:87:10: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:87:10: note: include '<math.h>' or provide a declaration of 'roundf'
+..\src\main.c:89:21: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  int temp_decimal = abs((int)temp - (temp_degree * 100));
+                     ^~~
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   3956	     12	   1052	   5020	   139c	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+14:52:47 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'main':
+..\src\main.c:64:16: error: void value not ignored as it ought to be
+     raw[count] = read_and_print_A0();
+                ^
+..\src\main.c:57:7: warning: unused variable 'result' [-Wunused-variable]
+   int result=0;
+       ^~~~~~
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:94:2: error: 'result' undeclared (first use in this function)
+  result=ADC1->DR;   //read conversion result
+  ^~~~~~
+..\src\main.c:94:2: note: each undeclared identifier is reported only once for each function it appears in
+..\src\main.c:97:10: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+  temp = (roundf(temp * 100) / 100) * 100;
+          ^~~~~~
+..\src\main.c:97:10: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:97:10: note: include '<math.h>' or provide a declaration of 'roundf'
+..\src\main.c:99:21: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  int temp_decimal = abs((int)temp - (temp_degree * 100));
+                     ^~~
+15:08:01 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'main':
+..\src\main.c:82:12: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+    temp = (roundf(temp * 100) / 100) * 100;
+            ^~~~~~
+..\src\main.c:82:12: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:82:12: note: include '<math.h>' or provide a declaration of 'roundf'
+..\src\main.c:84:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+    int temp_decimal = abs((int)temp - (temp_degree * 100));
+                       ^~~
+..\src\main.c:86:12: error: 'buf' undeclared (first use in this function)
+    sprintf(buf,"A0=%d.%d Celsius",temp_degree, temp_decimal);
+            ^~~
+..\src\main.c:86:12: note: each undeclared identifier is reported only once for each function it appears in
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:104:7: warning: unused variable 'buf' [-Wunused-variable]
+  char buf[100];
+       ^~~
+15:08:44 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'main':
+..\src\main.c:83:12: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+    temp = (roundf(temp * 100) / 100) * 100;
+            ^~~~~~
+..\src\main.c:83:12: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:83:12: note: include '<math.h>' or provide a declaration of 'roundf'
+..\src\main.c:85:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+    int temp_decimal = abs((int)temp - (temp_degree * 100));
+                       ^~~
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   4144	     12	   1052	   5208	   1458	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+15:15:18 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:85:10: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+  temp = (roundf(temp * 100) / 100) * 100;
+          ^~~~~~
+..\src\main.c:85:10: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:85:10: note: include '<math.h>' or provide a declaration of 'roundf'
+..\src\main.c:87:21: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  int temp_decimal = abs((int)temp - (temp_degree * 100));
+                     ^~~
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   4080	     12	   1052	   5144	   1418	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+15:39:46 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c: In function 'read_and_print_A0':
+..\src\main.c:86:10: warning: implicit declaration of function 'roundf' [-Wimplicit-function-declaration]
+  temp = (roundf(temp * 100) / 100) * 100;
+          ^~~~~~
+..\src\main.c:86:10: warning: incompatible implicit declaration of built-in function 'roundf'
+..\src\main.c:86:10: note: include '<math.h>' or provide a declaration of 'roundf'
+..\src\main.c:88:21: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  int temp_decimal = abs((int)temp - (temp_degree * 100));
+                     ^~~
+arm-atollic-eabi-gcc -o lab2.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=lab2.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list lab2.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   4096	     12	   1052	   5160	   1428	lab2.elf
+Print size information done
+Generate listing file
+Output sent to: lab2.list
+Generate listing file done
+Generate build reports done
+Info: Nothing to build for lab2
+08:39:35 **** Rebuild of configuration Debug for project Lab3 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\main.o 
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m3 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -g -Wa,--warn -x assembler-with-cpp -o src\startup_stm32l152xe.o ..\src\startup_stm32l152xe.s 
+arm-atollic-eabi-gcc -c ..\src\system_stm32l1xx.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\system_stm32l1xx.o 
+arm-atollic-eabi-gcc -c ..\src\tiny_printf.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\tiny_printf.o 
+arm-atollic-eabi-gcc -c ..\src\syscalls.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\syscalls.o 
+arm-atollic-eabi-gcc -o Lab3.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=Lab3.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list Lab3.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   1332	     12	   1052	   2396	    95c	Lab3.elf
+Print size information done
+Generate listing file
+Output sent to: Lab3.list
+Generate listing file done
+Generate build reports done
+08:51:58 **** Rebuild of configuration Debug for project Lab3 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m3 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -g -Wa,--warn -x assembler-with-cpp -o src\startup_stm32l152xe.o ..\src\startup_stm32l152xe.s 
+arm-atollic-eabi-gcc -c ..\src\syscalls.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\syscalls.o 
+arm-atollic-eabi-gcc -c ..\src\system_stm32l1xx.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\system_stm32l1xx.o 
+arm-atollic-eabi-gcc -c ..\src\tiny_printf.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\tiny_printf.o 
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\main.o 
+arm-atollic-eabi-gcc -o Lab3.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=Lab3.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list Lab3.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2104	     12	   1052	   3168	    c60	Lab3.elf
+Print size information done
+Generate listing file
+Output sent to: Lab3.list
+Generate listing file done
+Generate build reports done
+09:43:56 **** Incremental Build of configuration Debug for project Lab3 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\main.o 
+arm-atollic-eabi-gcc -o Lab3.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=Lab3.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list Lab3.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2104	     12	   1052	   3168	    c60	Lab3.elf
+Print size information done
+Generate listing file
+Output sent to: Lab3.list
+Generate listing file done
+Generate build reports done
+10:32:13 **** Incremental Build of configuration Debug for project Lab3 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\main.o 
+arm-atollic-eabi-gcc -o Lab3.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=Lab3.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list Lab3.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2088	     12	   1052	   3152	    c50	Lab3.elf
+Print size information done
+Generate listing file
+Output sent to: Lab3.list
+Generate listing file done
+Generate build reports done
+Info: Nothing to build for Lab3
+11:23:27 **** Incremental Build of configuration Debug for project Lab3 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\main.o 
+arm-atollic-eabi-gcc -o Lab3.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=Lab3.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list Lab3.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2048	     12	   1052	   3112	    c28	Lab3.elf
+Print size information done
+Generate listing file
+Output sent to: Lab3.list
+Generate listing file done
+Generate build reports done
+11:25:07 **** Incremental Build of configuration Debug for project Lab3 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\main.o 
+arm-atollic-eabi-gcc -o Lab3.elf src\main.o src\startup_stm32l152xe.o src\syscalls.o src\system_stm32l1xx.o src\tiny_printf.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=Lab3.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group 
+E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\ide\jre\bin\java -jar E:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.1\Tools\arm-atollic-reports.jar sizeinfo list Lab3.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   2032	     12	   1052	   3096	    c18	Lab3.elf
+Print size information done
+Generate listing file
+Output sent to: Lab3.list
+Generate listing file done
+Generate build reports done
